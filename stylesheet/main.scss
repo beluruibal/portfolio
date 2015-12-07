@@ -1,0 +1,22 @@
+---
+---
+
+@import "_typography";
+
+*
+{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+body
+{
+	font-family: $font-primary;
+	font-size: $font-base;
+}
+.container
+{
+	margin: 0 auto;
+	max-width: 60em;
+	width: 100%;
+}
