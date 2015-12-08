@@ -4,5 +4,7 @@ TYPOGRAPHY
 
 ------------------------------------------- */
 
-$font-primary: 				Arial, sans-serif;
+@import url(https://fonts.googleapis.com/css?family=Work+Sans:400,300,700);
+
+$font-primary: 				'Work Sans', Arial, sans-serif;
 $font-base:					16px;
