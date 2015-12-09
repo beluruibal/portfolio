@@ -16,39 +16,11 @@
 	<link rel="stylesheet" type="text/css" href="stylesheet/main.css">
 </head>
 <body>
-		<header>
-		<div class="container">
-			<h1>Belén Ruibal <br/>
-				<strong>UX Designer | UI Developer</strong>
-			</h1>
-			<nav>
-				<button class="menu-toggle"><i>+</i></button>
-				<ul class="nav-hidden">
-					<li }><a href="/">Inicio</a></li>
-			        <li }><a href="/trabajos.html">Trabajos</a></li>
-			        <li ><a href="/sobre-mi.html">Sobre mí</a></li>
-			        <li ><a href="/contacto.html">Contacto</a></li>
-				</ul>
-			</nav>
-			<!--div id="cssmenu" role="navigation">
-				<ul>
-				   <li ><a href="/">Inicio</a></li>
-			        <li }><a href="/trabajos.html">Trabajos</a></li>
-			        <li ><a href="/sobre-mi.html">Sobre mí</a></li>
-				</ul>
-			</div-->
-			<ul class="social-media-icons">
-				<li><a href=""><i class="">LinkedIn</i></a></li>
-				<li><a href=""><i class="">Behance</i></a></li>
-			</ul>
-		</div>
-	</header>
+	{% include header.html %}
 	<main class="container" role="main">
-		
+		{{ content }}
 	</main>
-		<footer>
-		Este es el footer
-	</footer>
+	{% include footer.html %}
 	<!-- init GRID-GALLERY SCRIPTS -->
 	<!--script src="grid-gallery/js/imagesloaded.pkgd.min.js"></script>
 	<script src="grid-gallery/js/masonry.pkgd.min.js"></script>
