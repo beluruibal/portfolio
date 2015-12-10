@@ -1,0 +1,22 @@
+@mixin transition ($type)
+{
+	-webkit-transition: $type;  
+	-moz-transition: $type;
+	-ms-transition: $type;
+	-o-transition: $type;
+	transition: $type;
+}
+@mixin rotate ($amount)
+{
+	-webkit-transform: rotate($amount);
+	-moz-transform: rotate($amount);
+	-o-transform: rotate($amount);
+	transform: rotate($amount);
+}
+@mixin transform-origin ($coor)
+{
+	-webkit-transform-origin: $coor;
+	-moz-transform-origin: $coor;
+	-o-transform-origin: $coor;
+	transform-origin: $coor;
+}

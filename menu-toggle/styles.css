@@ -1,0 +1,43 @@
+a.menu-link 
+{
+    position: absolute;
+    display: block;
+    left: 2em;
+    top: 3em;
+    width: 1.5em;
+    height: 1em;
+}
+nav#menu 
+{
+    -webkit-transition: all 0.3s ease-out;  
+    -moz-transition: all 0.3s ease-out;
+    -ms-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.js nav#menu 
+{
+    overflow: hidden;
+    max-height: 0;
+}
+nav#menu.active 
+{
+    max-height: 15em;
+}
+
+
+@media screen and (min-width: 48em) {
+
+    a.menu-link 
+    {
+        visibility: hidden;
+    }
+    .js nav#menu 
+    {
+        max-height: none;
+    }
+    nav#menu ul 
+    {
+        margin: 0 0 0 -0.25em;
+    }
+}

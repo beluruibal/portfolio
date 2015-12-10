@@ -3,12 +3,23 @@
 
 @import "_typography";
 @import "_colors";
+@import "_mixins";
 
 *
 {
 	box-sizing: border-box;
 	margin: 0;
 	padding: 0;
+}
+a
+{
+	text-decoration: none;
+	@include transition (all 0.3s ease-out);
+}
+img
+{
+	height: auto;
+	width: 100%;
 }
 ul
 {
@@ -22,30 +33,75 @@ body
 header
 {
 	background-color: white;
-	padding: 2em;
+	padding: 2em 0;
+	position: relative;
 
-	h1
+	@media screen and (min-width: 48em)
 	{
-		color: $color-deep-blue;
-		font-size: 2.25em;
-		font-weight: 300;
-		width: 100%;
+		padding: 2em;
 
-		strong
+		.container
 		{
-			font-size: 1.25rem;
+			display: flex;
 		}
 	}
-	nav
+	h1
 	{
-		ul
-		{			
-			li
+		color: $color-blue;
+		font-size: 1.5em;
+		font-weight: 300;
+		line-height: 1em;
+		position: relative;
+		left: 2.25em;
+		width: 80%;
+
+		@media screen and (min-width: 48em)
+		{
+			width: 30%;
+			left: 0;
+		}
+		strong
+		{
+			font-size: 0.875rem;
+		}
+	}
+}
+nav
+{
+	@media screen and (min-width: 48em)
+	{
+		display: flex;
+		width: 60%;
+	}
+	ul
+	{
+		@media screen and (max-width: 47.99em)
+		{
+			margin: 1em 0;
+		}
+		@media screen and (min-width: 48em)
+		{
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			padding: 0.5em 1em;
+		}
+		li
+		{
+			a
 			{
-				a
+				color: $color-turquoise;
+				display: block;
+				padding: 0.5em 0;
+				
+				@media screen and (min-width: 48em)
 				{
-					display: block;
 					padding: 0.5em 1em;
+				}
+
+				&:hover
+				{
+					color: $color-blue;
 				}
 			}
 		}
@@ -56,5 +112,110 @@ header
 	margin: 0 auto;
 	max-width: 72em;
 	min-width: 24em;
+	padding: 0 2em;
 	width: 100%;
+
+	@media screen and (min-width: 48em)
+	{
+		padding: 0;
+	}
+}
+.social-media-icons
+{
+	display: flex;
+	margin-top: 1em;
+	width: 20%;
+	
+	@media screen and (min-width: 48em)
+	{
+		align-items: center;
+		justify-content: flex-end;
+		margin: 0;
+		width: 10%;
+	}
+	li
+	{
+		margin: 0 0.25em;
+		width: 2em;
+
+		&:first-child
+		{
+			margin-left: 0;
+		}
+		a
+		{
+			height: 100%;
+			width: 100%;
+		}
+	}
+}
+#icon-behance, 
+#icon-linkedin 
+{
+	&:hover
+	{
+		*
+		{
+			fill: $color-blue;
+			@include transition (all 0.3s ease-in-out);
+		}
+	}
+}
+#menu-icon 
+{
+    @include rotate (0deg);
+    @include transition (.5s ease-in-out);
+    cursor: pointer;
+
+    span 
+    {
+        display: block;
+        position: absolute;
+        height: 2px;
+        width: 1.5em;
+        background: $color-blue;
+        opacity: 1;
+        left: 0;
+        @include rotate (0deg);
+        @include transition (.25s ease-in-out);
+
+        &:nth-child(1) 
+        {
+            top: 0px;
+            @include transform-origin (left center);
+        }
+        &:nth-child(2) 
+        {
+            top: 6px;
+            @include transform-origin (left center);
+        }
+        &:nth-child(3) 
+        {
+            top: 12px;
+            @include transform-origin (left center);
+        }
+    }
+    &.active 
+    {
+        span
+        {
+            &:nth-child(1)
+            {
+                top: 0;
+                left: 0;
+                @include rotate (45deg);
+            }
+            &:nth-child(2) 
+            {
+              width: 0%;
+              opacity: 0;
+            }
+            &:nth-child(3) 
+            {
+                @include rotate (-45deg);
+                top: 17px;
+                left: 0;
+            }
+        }
+    }
 }
